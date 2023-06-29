@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title>Log-in</title>
+
+    </head>
+
+    <body>
+
+       <h3> Login  </h3>
+
+       <form action="/login" method="POST">
+            <div>
+            <label for='email'>Email</label>
+            <input type="email" name="email" id="email" placeholder="name@gmail.com"/>
+            @if(flashMessages.has('errors.email'))
+            <small>{{flashMessages.get('errors.email')}}</small>
+            @endif
+            </div>
+
+            <div>
+                <label for='password'>Password</label>
+                <input type="password" name="password" id="password" placeholder="name@gmail.com"/>
+                @if(flashMessages.has('errors.password'))
+                <small>{{flashMessages.get('errors.password')}}</small>
+                @endif
+                </div>
+
+                <button type="submit">Login</button>
+       </form>
+
+    </body>
+
+</html>

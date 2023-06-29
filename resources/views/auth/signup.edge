@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Instagram - Sign Up</title>
+ {{-- <link rel="stylesheet" type="text/css" href="style.css"> --}}
+  <style>
+    .container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #3897f0;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #3897f0;
+}
+
+p {
+  margin-top: 20px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Instagram</h1>
+    <form action="/signup" method="POST">
+        <div>
+            <label for='username'></label>
+            <input type="text" name="username" id="username" placeholder="Username"/>
+            @if(flashMessages.has('errors.username'))
+            <small>{{flashMessages.get('errors.username')}}</small>
+            @endif
+            </div>
+
+            <div>
+            <label for='email'></label>
+            <input type="email" name="email" id="email" placeholder="Email: name@gmail.com"/>
+            @if(flashMessages.has('errors.email'))
+            <small>{{flashMessages.get('errors.email')}}</small>
+            @endif
+            </div>
+
+            <div>
+            <label for='passowrd'></label>
+            <input type="password" name="password" id="password" placeholder="Password"/>
+            @if(flashMessages.has('errors.password'))
+            <small>{{flashMessages.get('errors.password')}}</small>
+            @endif
+            </div>
+
+            <div>
+            <label for='password_confirmation'></label>
+            <input type="password_confirmation" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password"/>
+
+            @if(flashMessages.has('errors.password_confirmation'))
+            <small>{{flashMessages.get('errors.password_confirmationusername')}}</small>
+            @endif
+            </div>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="/login">Log in</a></p>
+  </div>
+</body>
+</html>
